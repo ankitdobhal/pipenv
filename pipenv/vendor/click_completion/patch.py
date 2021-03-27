@@ -157,7 +157,6 @@ def _shellcomplete(cli, prog_name, complete_var=None):
 
 def patch():
     """Patch click"""
-    import click
     click.types.ParamType.complete = param_type_complete
     click.types.Choice.complete = choice_complete
     click.core.MultiCommand.get_command_short_help = multicommand_get_command_short_help

@@ -927,7 +927,6 @@ def clean_requires_python(candidates):
     """Get a cleaned list of all the candidates with valid specifiers in the `requires_python` attributes."""
     all_candidates = []
     sys_version = ".".join(map(str, sys.version_info[:3]))
-    from packaging.version import parse as parse_version
 
     py_version = parse_version(os.environ.get("PIP_PYTHON_VERSION", sys_version))
     for c in candidates:
