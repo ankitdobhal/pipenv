@@ -15,7 +15,7 @@ def _quote_if_contains(value, pattern):
     return value
 
 
-class Script(object):
+class Script:
     """Parse a script line (in Pipfile's [scripts] section).
 
     This always works in POSIX mode, even on Windows.

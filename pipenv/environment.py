@@ -37,7 +37,7 @@ BASE_WORKING_SET = pkg_resources.WorkingSet(sys.path)
 # TODO: Unittests for this class
 
 
-class Environment(object):
+class Environment:
     def __init__(
         self,
         prefix=None,  # type: Optional[str]
@@ -1029,7 +1029,7 @@ class Environment(object):
                 return
 
 
-class PatchedUninstaller(object):
+class PatchedUninstaller:
     def _permitted(self, path):
         return True
 
