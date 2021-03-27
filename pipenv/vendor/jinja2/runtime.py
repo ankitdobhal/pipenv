@@ -268,7 +268,7 @@ class Context(with_metaclass(ContextMeta)):
             __traceback_hide__ = True  # noqa
 
         # Allow callable classes to take a context
-        if hasattr(__obj, "__call__"):  # noqa: B004
+        if callable(__obj):  # noqa: B004
             fn = __obj.__call__
             for fn_type in (
                 "contextfunction",

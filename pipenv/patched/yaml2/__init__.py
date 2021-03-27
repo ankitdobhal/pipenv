@@ -414,18 +414,18 @@ class YAMLObject(object):
     yaml_tag = None
     yaml_flow_style = None
 
+    @classmethod
     def from_yaml(cls, loader, node):
         """
         Convert a representation node to a Python object.
         """
         return loader.construct_yaml_object(node, cls)
-    from_yaml = classmethod(from_yaml)
 
+    @classmethod
     def to_yaml(cls, dumper, data):
         """
         Convert a Python object to a representation node.
         """
         return dumper.represent_yaml_object(cls.yaml_tag, data, cls,
                 flow_style=cls.yaml_flow_style)
-    to_yaml = classmethod(to_yaml)
 
