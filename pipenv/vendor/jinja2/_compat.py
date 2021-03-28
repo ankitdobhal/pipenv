@@ -52,7 +52,7 @@ else:
     iteritems = lambda d: d.iteritems()
 
     import cPickle as pickle
-    from cStringIO import StringIO
+    from cStringIO import StringIO as BytesIO, StringIO
 
     NativeStringIO = BytesIO
 
