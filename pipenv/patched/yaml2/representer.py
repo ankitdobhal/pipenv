@@ -73,17 +73,17 @@ class BaseRepresenter(object):
         #    self.represented_objects[alias_key] = node
         return node
 
-    @classmethod
     def add_representer(cls, data_type, representer):
         if not 'yaml_representers' in cls.__dict__:
             cls.yaml_representers = cls.yaml_representers.copy()
         cls.yaml_representers[data_type] = representer
+    add_representer = classmethod(add_representer)
 
-    @classmethod
     def add_multi_representer(cls, data_type, representer):
         if not 'yaml_multi_representers' in cls.__dict__:
             cls.yaml_multi_representers = cls.yaml_multi_representers.copy()
         cls.yaml_multi_representers[data_type] = representer
+    add_multi_representer = classmethod(add_multi_representer)
 
     def represent_scalar(self, tag, value, style=None):
         if style is None:
