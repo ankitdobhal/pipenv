@@ -135,7 +135,7 @@ class _TemporaryFileWrapper:
         # (i.e. methods are cached, closed and friends are not)
         file = self.__dict__["file"]
         a = getattr(file, name)
-        if callable(a):
+        if hasattr(a, "__call__"):
             func = a
 
             @functools.wraps(func)
