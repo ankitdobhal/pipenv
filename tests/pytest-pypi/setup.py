@@ -1,7 +1,6 @@
 from setuptools import setup, find_packages, Command
 import codecs
 import os
-import re
 import sys
 from shutil import rmtree
 
