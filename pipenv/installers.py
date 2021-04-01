@@ -11,7 +11,7 @@ from .utils import find_windows_executable
 
 
 @attr.s
-class Version:
+class Version(object):
 
     major = attr.ib()
     minor = attr.ib()
@@ -65,7 +65,7 @@ class InstallerError(RuntimeError):
 
 
 @six.add_metaclass(ABCMeta)
-class Installer:
+class Installer(object):
 
     def __init__(self):
         self.cmd = self._find_installer()

@@ -51,7 +51,7 @@ class PipenvGroup(DYMMixin, Group):
         )
 
 
-class State:
+class State(object):
     def __init__(self):
         self.index = None
         self.extra_index_urls = []
@@ -68,7 +68,7 @@ class State:
         self.lockoptions = LockOptions()
 
 
-class InstallState:
+class InstallState(object):
     def __init__(self):
         self.dev = False
         self.pre = False
@@ -84,7 +84,7 @@ class InstallState:
         self.editables = []
 
 
-class LockOptions:
+class LockOptions(object):
     def __init__(self):
         self.dev_only = False
         self.emit_requirements = False
